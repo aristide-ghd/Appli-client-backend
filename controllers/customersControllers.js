@@ -49,4 +49,15 @@ const details_customers = async (req, res) => {
         }
 };
 
-module.exports = { ajout_customers, details_customers };
+//Fonction pour voir la liste des clients
+const get_list_customers = async (req, res) => {
+  try {
+    const list_customers = await Customers.find();
+    res.status(200).json(list_customers);
+  } catch (error) {
+    console.error(error);
+    res.status(400).json({message: "Erreur lors de la recuperation des clients"});
+  }
+}
+
+module.exports = { ajout_customers, details_customers, get_list_customers };
