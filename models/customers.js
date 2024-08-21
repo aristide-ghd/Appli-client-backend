@@ -43,17 +43,21 @@ const customersSchema = new mongoose.Schema({
   additionnal_data: {
     customer_cat: {
       type: String,
-      required: false
+      required: false,
+      enum: ['GOLD', 'PREMIUM', 'SILVER', 'IRON']
     },
     family: {
       father: {
-        type: String
+        type: String,
+        required: false
       },
       mother: {
-        type: String
+        type: String,
+        required: false
       },
       sister: {
-        type: String
+        type: String,
+        required: false
       }
     }
   }
