@@ -25,7 +25,7 @@ const customersSchema = new mongoose.Schema({
   data: {
     card_number: {
       type: Number,
-      required: false
+      required: true
     },
     city: {
       type: String,
